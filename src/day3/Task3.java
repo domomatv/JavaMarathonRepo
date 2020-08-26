@@ -21,10 +21,11 @@ public class Task3 {
 
             if (b == 0) {
                 System.out.println("Деление на 0");
-            } else {
-                System.out.println(a / b);
-                counter++;
+                continue;
             }
+            System.out.println(a / b);
+            counter++;
         }
+
     }
 }
