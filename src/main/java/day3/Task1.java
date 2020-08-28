@@ -39,7 +39,8 @@ public class Task1 {
                 message = "Game over";
 
             } else {
-
+                // Error:(43,24) java: strings in switch are not supported in -source 1.5
+                /*
                 switch (enteredWord) {
                     case "Москва":
                     case "Владивосток":
@@ -69,7 +70,10 @@ public class Task1 {
                         message = "Неизвестная страна";
                 }
                 System.out.println(message);
+
+                 */
             }
+
 
         }
 
