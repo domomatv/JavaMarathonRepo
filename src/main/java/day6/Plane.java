@@ -16,7 +16,6 @@ public class Plane {
     private int length;
     private int weight;
     private int volumeDeisel;
-
     private String producer;
 
 
@@ -57,7 +56,7 @@ public class Plane {
     }
 
     public void setVolumeDeisel(int volumeDeisel) {
-        this.volumeDeisel = volumeDeisel;
+        this.volumeDeisel += volumeDeisel;
     }
 
     public String getProducer() {
