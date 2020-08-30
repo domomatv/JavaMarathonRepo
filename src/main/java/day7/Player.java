@@ -22,13 +22,15 @@ public class Player {
     public static final int MIN_STAMINA = 0;
     private static int countPlayers = 0;
     private int stamina;
+    private Boolean isInGame = false;
 
 
     public Player() {
         Random rand = new Random();
         this.stamina = rand.nextInt(11) + 90;
-        if (countPlayers >= 0 && countPlayers < 6) {
-            countPlayers++;
+        if (countPlayers >= 0 && countPlayers <= 6) {
+            this.isInGame = true;
+            if (countPlayers != 6) countPlayers++;
         }
 
     }
@@ -59,9 +61,10 @@ public class Player {
 
     public void run() {
         if (this.stamina == MIN_STAMINA) {
-            System.out.println("игрок ушел");
-            if (countPlayers > 0 && countPlayers < 7) {
+            //  System.out.println("игрок устал, он в игре: "+this.isInGame);
+            if (this.isInGame == true && countPlayers > 0 && countPlayers < 7) {
                 countPlayers--;
+                this.isInGame = false;
             }
         } else {
             this.stamina -= 1;

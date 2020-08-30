@@ -25,9 +25,9 @@ public class Task2 {
         Player player7 = new Player();
         Player.info();
 
-        for (int i = 0; i < 101; i++) {
-            player5.run();
-        }
+//        for (int i = 0; i < 101; i++) {
+//            player5.run();
+//        }
 
         Player player8 = new Player();
         Player.info();
@@ -46,10 +46,17 @@ public class Task2 {
             player2.run();
         }
         for (int i = 0; i < 101; i++) {
+            player10.run();
+        }
+        for (int i = 0; i < 101; i++) {
             player3.run();
         }
 
-        Player player11 = new Player();
+
         Player.info();
+
+
     }
+
+
 }
