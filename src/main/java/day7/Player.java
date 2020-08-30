@@ -27,7 +27,9 @@ public class Player {
     public Player() {
         Random rand = new Random();
         this.stamina = rand.nextInt(11) + 90;
-        addPlayer();
+        if (countPlayers >= 0 && countPlayers < 6) {
+            countPlayers++;
+        }
 
     }
 
@@ -35,19 +37,15 @@ public class Player {
         return countPlayers;
     }
 
-    public static void addPlayer() {
+//    public static void addPlayer() {
+//
+//
+//    }
 
-        if (countPlayers >= 0 && countPlayers < 6) {
-            countPlayers++;
-        }
-    }
-
-    public static void deletePlayer() {
-
-        if (countPlayers > 0 && countPlayers < 7) {
-            countPlayers--;
-        }
-    }
+//    public static void deletePlayer() {
+//
+//
+//    }
 
     public static void info() {
         if (countPlayers > 6) {
@@ -60,10 +58,13 @@ public class Player {
     }
 
     public void run() {
-        this.stamina -= 1;
         if (this.stamina == MIN_STAMINA) {
             System.out.println("игрок ушел");
-            deletePlayer();
+            if (countPlayers > 0 && countPlayers < 7) {
+                countPlayers--;
+            }
+        } else {
+            this.stamina -= 1;
         }
     }
 }
