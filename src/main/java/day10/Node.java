@@ -35,6 +35,14 @@ public class Node {
         this.rightNode = rightNode;
     }
 
+    public boolean hasLeft() {
+        return this.getLeftNode() == null;
+    }
+
+    public boolean hasRight() {
+        return this.getRightNode() == null;
+    }
+
     public Node add(Node curNode, int value) {
         // если место свободно
         if (curNode == null) {
@@ -51,6 +59,14 @@ public class Node {
         //  равно
         return curNode;
 
+    }
+
+    public void print(Node curNode) {
+        if (curNode != null) {
+            print(curNode.getLeftNode());
+            System.out.println(curNode.getValue());
+            print(curNode.getRightNode());
+        }
     }
 
 }
