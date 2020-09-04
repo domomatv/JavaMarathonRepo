@@ -14,7 +14,7 @@ public class Task5 {
 
     public static void main(String[] args) {
 
-        MusicBandTask5 kasta = new MusicBandTask5("Каста", 2000);
+        MusicBand<MusicArtist> kasta = new MusicBand("Каста", 2000);
         kasta.getMembers().addAll(
                 Arrays.asList(
                         new MusicArtist("Влади", 15),
@@ -24,7 +24,7 @@ public class Task5 {
                 )
         );
 
-        MusicBandTask5 beatles = new MusicBandTask5("Beatles", 1960);
+        MusicBand<MusicArtist> beatles = new MusicBand("Beatles", 1960);
         beatles.getMembers().addAll(
                 Arrays.asList(
                         new MusicArtist("Джон Леннон", 20),

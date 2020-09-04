@@ -3,10 +3,10 @@ package day12;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MusicBand {
+public class MusicBand<T> {
     private String name;
     private int year;
-    private Set<String> members;
+    private Set<T> members;
 
 
     public MusicBand(String name, int year) {
@@ -15,11 +15,11 @@ public class MusicBand {
         this.members = new HashSet<>();
     }
 
-    public Set<String> getMembers() {
+    public Set<T> getMembers() {
         return members;
     }
 
-    public void setMembers(Set<String> members) {
+    public void setMembers(Set<T> members) {
         this.members = members;
     }
 
