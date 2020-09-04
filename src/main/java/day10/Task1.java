@@ -16,10 +16,18 @@ public class Task1 {
         Node root = new Node(10);
         Random rand = new Random();
         int i = 0;
-        while (i < 20) {
+        /*while (i < 20) {
             root.add(root, rand.nextInt(50));
             i++;
-        }
+        }*/
+        root.add(root, 1);
+        root.add(root, 5);
+        root.add(root, 8);
+        root.add(root, 5);
+        root.add(root, 1);
+
+
+
         root.print(root);
     }
 

@@ -10,7 +10,7 @@ package day11;
  */
 
 public class Courier implements Worker {
-    private static int salary;
+    private int salary;
     private Warehouse warehouse;
 
     public void doWork() {

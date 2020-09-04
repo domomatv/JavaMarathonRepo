@@ -9,7 +9,7 @@ package day11;
  */
 
 public class Picker implements Worker {
-    private static int salary;
+    private int salary;
     private Warehouse warehouse;
 
     public void doWork() {
