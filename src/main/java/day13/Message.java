@@ -1,0 +1,40 @@
+package day13;
+
+import java.util.Date;
+
+public class Message {
+
+    private User sender;
+    private User receiver;
+    private String text;
+    private Date date;
+
+    public Message(User sender, User receiver, String text) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.text = text;
+        this.date = new Date();
+    }
+
+    public User getSender() {
+        return sender;
+    }
+
+    public User getReceiver() {
+        return receiver;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("FROM:  %s%nTO: %s%nON: %s%n       %s", this.sender, this.receiver, this.date, this.text);
+    }
+
+}
