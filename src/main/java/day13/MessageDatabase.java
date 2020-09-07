@@ -3,7 +3,6 @@ package day13;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MessageDatabase {
 
@@ -26,16 +25,19 @@ public class MessageDatabase {
      * user2: Все ок, спасибо :)
      */
     public static void showDialog(User u1, User u2) {
-        List<Message> listDialog = messages.stream().filter(e -> (e.getReceiver().equals(u2) && e.getSender().equals(u1))
+        messages.stream().filter(e -> (e.getReceiver().equals(u2) && e.getSender().equals(u1))
                 || (e.getReceiver().equals(u1) && e.getSender().equals(u2)))
                 .sorted(Comparator.comparing(o -> o.getDate()))
-                .collect(Collectors.toList());
+                .forEach(System.out::println);
 
-        for (Message mes : listDialog) {
-            System.out.println(mes.getSender() + ": " + mes.getText());
 
-        }
     }
+
+    public void printMessage(Message message) {
+        System.out.println(message.getSender() + ": " + message.getText());
+    }
+
+    ;
 
     public static List<Message> getMessages() {
         return messages;
