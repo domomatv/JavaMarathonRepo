@@ -86,7 +86,7 @@ public class Board {
 
     // стрингу превращает в коррдинаты
 
-    private List<Coordinate> getCoordinates(ShipType shipType, String coordinateString) {
+    public List<Coordinate> getCoordinates(ShipType shipType, String coordinateString) {
         List<Coordinate> coordinates = new ArrayList<>();
         String[] coordinatePairs = coordinateString.split(";");
 
@@ -126,7 +126,7 @@ public class Board {
 
     // проверка, что координаты указаны друг за другом и на одной прямой
     // условие, что начинаем с головы вводить координаты
-    private void validateCoordinatesNearEachOtherAndOneLine(List<Coordinate> coordinate) {
+    public void validateCoordinatesNearEachOtherAndOneLine(List<Coordinate> coordinate) {
 
         for (int i = coordinate.size() - 1; i > 0; i--) {
             // либо равна одна из координат, а вторая раздичаются на 1
@@ -158,7 +158,7 @@ public class Board {
     }
 
 
-    private void validateFreeSpace(List<Coordinate> coordinateList) {
+    public void validateFreeSpace(List<Coordinate> coordinateList) {
 
         //  проверка, что есть место на доске
         for (int i = 0; i < field.length; i++) {
