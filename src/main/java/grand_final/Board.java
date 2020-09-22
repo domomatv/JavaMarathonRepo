@@ -38,6 +38,7 @@ public class Board {
     private static String SHIP_AREA = "\uD83D\uDFE6";
     private static String SHIP_ICON = "\uD83D\uDEE5";
     private static String SHIP_SHOOTED_ICON = "\uD83D\uDFE5";
+    private static String SHOOTED_FAIL = "\uD83E\uDD22";
 
     // доступные корабли
     // тип и количество
@@ -241,6 +242,9 @@ public class Board {
                 }
             }
         }
+
+        // если не попал, ставим miss
+        field[x][y] = SHOOTED_FAIL;
         return ShootStatus.MISS;
     }
 

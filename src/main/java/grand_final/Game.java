@@ -63,6 +63,9 @@ public class Game {
                     printWinnerName(playerFirst);
                     return;
                 }
+
+                playerSecond.getBoard().print();
+
             } while (!currentStatus.equals(ShootStatus.MISS));
 
             do {
@@ -74,6 +77,7 @@ public class Game {
                     return;
 
                 }
+                playerSecond.getBoard().print();
 
             } while (!currentStatus.equals(ShootStatus.MISS));
 
