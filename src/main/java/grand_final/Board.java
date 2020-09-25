@@ -94,8 +94,15 @@ public class Board {
         for (String coordinatePair : coordinatePairs) {
             String[] coordinatesXY = coordinatePair.split(",");
             // 0 координата - горизональная, 1 - вертикальная
-            int x = Integer.parseInt(coordinatesXY[1]);
-            int y = Integer.parseInt(coordinatesXY[0]);
+            int x, y;
+
+            try {
+                x = Integer.parseInt(coordinatesXY[1]);
+                y = Integer.parseInt(coordinatesXY[0]);
+            } catch (Exception e) {
+                throw new ShipPositionExeption("координаты не получилось распарсить, попробуй снова");
+
+            }
             // TODO: использовать regexp
             if (x < 0 || x > 9 || y < 0 || y > 9) {
                 throw new ShipPositionExeption("координаты не проходят валидацию >=0 <=9");
